@@ -9,12 +9,16 @@ Requests CLI
         :target: https://pypi.python.org/pypi/reqcli
 
 
-A simple command-line interface for requests using click.
+This package is meant as an example for writing command-line applications
+using the Python package click.
 
-* Free software: MIT license
-* Documentation: https://reqcli.readthedocs.org.
+It is a simple CLI HTTP client that uses Python requests. 
+
+If you are looking for a full-featured HTTP command-line tool, check out  
+http://httpie.org.
 
 Features
 --------
 
-* TODO
+Usage
+-----
