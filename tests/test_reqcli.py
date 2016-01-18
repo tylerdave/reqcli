@@ -18,9 +18,8 @@ class TestReqcli(unittest.TestCase):
     def setUp(self):
         pass
 
-    def test_something(self):
+    def test_hello_world_runs(self):
         assert(reqcli.hello_world())
-        pass
 
     def tearDown(self):
         pass

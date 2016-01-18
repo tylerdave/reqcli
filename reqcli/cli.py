@@ -14,8 +14,12 @@ def cli(url, show_headers, show_status, allow_redirects, verbose):
     try:
         response = requests.get(url, allow_redirects=allow_redirects)
         response.raise_for_status()
-    except requests.exceptions.HTTPError as e:
+    except requests.exceptions.RequestException as e:
+        click.secho(str(e), err=True, fg='yellow' )
+        raise click.Abort()
+    except Exception as e:
         click.secho(str(e), err=True, fg='red' )
+        raise click.Abort()
 
     status_colors = {
             2: 'green',
