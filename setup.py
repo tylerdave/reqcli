@@ -30,7 +30,8 @@ setup(
     name='reqcli',
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    description="A simple command-line interface for requests using click.",
+    description="A simple command-line interface for HTTP requests, "
+                "using click and requests.",
     long_description=readme + '\n\n' + history,
     author="Dave Forgac",
     author_email='tylerdave@tylerdave.com',
@@ -51,7 +52,6 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',

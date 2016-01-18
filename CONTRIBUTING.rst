@@ -2,8 +2,9 @@
 Contributing
 ============
 
-Contributions are welcome, and they are greatly appreciated! Every
-little bit helps, and credit will always be given.
+*This is meant to be an example to be used in a tutorial so I'm not treating it
+as a serious project however if you'd like to make improvements, your
+contributions are welcome.*
 
 You can contribute in many ways:
 
@@ -99,9 +100,9 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-3. The pull request should work for Python 2.6, 2.7, 3.3, and 3.4, and for PyPy. Check
+3. The pull request should work for Python 2.7, 3.3, 3.4, 3.5 and for PyPy. Check
    https://travis-ci.org/tylerdave/reqcli/pull_requests
-   and make sure that the tests pass for all supported Python versions.
+   to make sure that the tests pass for all supported Python versions.
 
 Tips
 ----
