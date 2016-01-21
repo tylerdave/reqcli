@@ -24,9 +24,12 @@ requirements = [
 
 test_requirements = [
     'pytest',
-    'responses',
     'tox',
 ]
+
+extras = {
+        'develop': test_requirements,
+        }
 
 setup(
     name='reqcli',
@@ -46,6 +49,7 @@ setup(
         },
     include_package_data=True,
     install_requires=requirements,
+    extras_require=extras,
     license="MIT",
     keywords='reqcli',
     classifiers=[
