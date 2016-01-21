@@ -24,6 +24,8 @@ requirements = [
 
 test_requirements = [
     'pytest',
+    'responses',
+    'tox',
 ]
 
 setup(
