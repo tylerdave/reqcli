@@ -3,12 +3,22 @@ import requests
 
 @click.command()
 @click.argument('url')
+@click.option('--header', '-h', multiple=True, help='Add a colon-delimeted HTTP header to the request (eg. "Host: www.example.com")')
+@click.option('--headers-json', metavar='JSON', help='Include headers when making the request')
 @click.option('--show-headers', '-H', is_flag=True, default=False)
 @click.option('--show-status', '-S', is_flag=True, default=False)
 @click.option('--quiet', '-Q', is_flag=True, default=False)
 @click.option('--allow-redirects/--no-allow-redirects', default=True)
 @click.option('--verbose', '-v', is_flag=True, default=False)
-def cli(url, show_headers, show_status, quiet, allow_redirects, verbose):
+def cli(url, header, headers_json, show_headers, show_status, quiet, allow_redirects, verbose):
+
+    if header:
+        click.echo(type(header))
+        click.echo(header)
+
+    if headers_json:
+        click.echo(headers_json)
+
     # Make the request
     if verbose:
         click.secho('Making HTTP request to "{0}"...'.format(url), err=True, fg='white')
