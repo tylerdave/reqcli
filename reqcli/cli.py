@@ -5,9 +5,10 @@ import requests
 @click.argument('url')
 @click.option('--show-headers', '-H', is_flag=True, default=False)
 @click.option('--show-status', '-S', is_flag=True, default=False)
+@click.option('--quiet', '-Q', is_flag=True, default=False)
 @click.option('--allow-redirects/--no-allow-redirects', default=True)
 @click.option('--verbose', '-v', is_flag=True, default=False)
-def cli(url, show_headers, show_status, allow_redirects, verbose):
+def cli(url, show_headers, show_status, quiet, allow_redirects, verbose):
     # Make the request
     if verbose:
         click.secho('Making HTTP request to "{0}"...'.format(url), err=True, fg='white')
@@ -38,11 +39,12 @@ def cli(url, show_headers, show_status, allow_redirects, verbose):
         click.echo(format_headers(response.headers), err=True)
 
     # Show the response body
-    click.echo(response.text)
+    if not quiet:
+        click.echo(response.text)
 
 if __name__ == '__main__':
     cli()
 
 def format_headers(headers):
-    formatted = ['{0}: {1}'.format(k, v) for k, v in headers.iteritems()]
+    formatted = ['{0}: {1}'.format(k, v) for k, v in headers.items()]
     return '\n'.join(formatted)
